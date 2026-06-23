@@ -3,39 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Meu Site Simples</title>
-</head>
-<body>
+    <style>
+        /* Configurações gerais do site */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
 
-    <h1>Título Principal do Site</h1>
-    <p>Este é um parágrafo de texto explicando o objetivo da página.</p>
-    
-    <h2>Subtítulo da Seção</h2>
-    <p>Podemos escrever quantos parágrafos quisermos para dividir as ideias.</p>
-    <h3>Outro nível de título (menor)</h3>
+        /* Alto contraste e destaque no Título Principal */
+        h1 {
+            color: #ffffff;
+            background-color: #1a252f; /* Fundo escuro para dar contraste */
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
 
-    <div>
-        <p>Este conteúdo está dentro de uma divisão (div).</p>
-        
-        <a href="https://www.wikipedia.org" target="_blank">Acessar o site da Wikipedia</a>
-        
-        <br><br> <img src="https://picsum.photos/200/150" alt="Uma imagem de exemplo do banco de dados">
-    </div>
+        /* Estilização dos subtítulos */
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
 
-    <h2>Exemplos de Listas</h2>
+        h3 {
+            color: #7f8c8d;
+        }
 
-    <h3>Lista com marcadores (não ordenada)</h3>
-    <ul>
-        <li>Computador</li>
-        <li>Teclado</li>
-        <li>Mouse</li>
-    </ul>
+        /* Estilização da caixinha (div) */
+        div {
+            background-color: #ffffff;
+            padding: 20px;
+            border-left: 5px solid #3498db;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
 
-    <h3>Lista numerada (ordenada)</h3>
-    <ol>
-        <li>Primeiro passo</li>
-        <li>Segundo passo</li>
-        <li>Terceiro passo</li>
-    </ol>
-
-</body>
-</html>
+        /*
