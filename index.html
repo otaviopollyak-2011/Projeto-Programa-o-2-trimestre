@@ -146,11 +146,11 @@
         }
 
         .btn-like:hover {
-            background-color: #2e7d32; /* Verde para o Like */
+            background-color: #2e7d32;
         }
 
         .btn-deslike:hover {
-            background-color: #c62828; /* Vermelho para o Deslike */
+            background-color: #c62828;
         }
 
         /* Rodapé */
@@ -192,8 +192,8 @@
                     <p>Descubra os novos títulos que estão dominando o mercado e conquistando os jogadores com histórias épicas e gráficos de última geração.</p>
                 </div>
                 <div class="card-actions">
-                    <button class="btn-feedback btn-like">👍 Gostei</button>
-                    <button class="btn-feedback btn-deslike">👎 Não Gostei</button>
+                    <button class="btn-feedback btn-like" onclick="computarClique(this, '👍 Gostei')">👍 Gostei (0)</button>
+                    <button class="btn-feedback btn-deslike" onclick="computarClique(this, '👎 Não Gostei')">👎 Não Gostei (0)</button>
                 </div>
             </article>
 
@@ -203,8 +203,8 @@
                     <p>O que esperar das próximas atualizações de hardware? Analisamos os rumores sobre os novos modelos e tecnologias de processamento.</p>
                 </div>
                 <div class="card-actions">
-                    <button class="btn-feedback btn-like">👍 Gostei</button>
-                    <button class="btn-feedback btn-deslike">👎 Não Gostei</button>
+                    <button class="btn-feedback btn-like" onclick="computarClique(this, '👍 Gostei')">👍 Gostei (0)</button>
+                    <button class="btn-feedback btn-deslike" onclick="computarClique(this, '👎 Não Gostei')">👎 Não Gostei (0)</button>
                 </div>
             </article>
 
@@ -214,8 +214,8 @@
                     <p>Confira o resumo do último campeonato mundial e veja quais times se destacaram na busca pelo troféu mais cobiçado da temporada.</p>
                 </div>
                 <div class="card-actions">
-                    <button class="btn-feedback btn-like">👍 Gostei</button>
-                    <button class="btn-feedback btn-deslike">👎 Não Gostei</button>
+                    <button class="btn-feedback btn-like" onclick="computarClique(this, '👍 Gostei')">👍 Gostei (0)</button>
+                    <button class="btn-feedback btn-deslike" onclick="computarClique(this, '👎 Não Gostei')">👎 Não Gostei (0)</button>
                 </div>
             </article>
         </div>
@@ -224,6 +224,25 @@
     <footer>
         <p>&copy; 2026 GameZone. Criado para fãs de videogames.</p>
     </footer>
+
+    <script>
+        // Objeto para armazenar os cliques de cada botão de forma independente
+        const controleCliques = new Map();
+
+        function computarClique(botao, textoBase) {
+            // Se o botão ainda não foi clicado nenhuma vez, inicializa com 0
+            if (!controleCliques.has(botao)) {
+                controleCliques.set(botao, 0);
+            }
+
+            // Incrementa o número de cliques do botão específico
+            let cliquesAtuais = controleCliques.get(botao) + 1;
+            controleCliques.set(botao, cliquesAtuais);
+
+            // Atualiza o texto visível do botão
+            botao.innerText = `${textoBase} (${cliquesAtuais})`;
+        }
+    </script>
 
 </body>
 </html>
